@@ -107,6 +107,7 @@ couchstore_error_t couchstore_open_db_ex(const char *filename,
     ppdb->options->soft_rate_limit = 2.5;
     ppdb->options->level0_slowdown_writes_trigger = 12;
     ppdb->options->level0_stop_writes_trigger = 16;
+    ppdb->options->num_levels = 4;
 
     if (ppdb->options->compression != rocksdb::kNoCompression) {
         ppdb->options->compression_per_level.resize(ppdb->options->num_levels);
